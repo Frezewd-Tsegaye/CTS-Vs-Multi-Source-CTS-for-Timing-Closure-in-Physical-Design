@@ -1,0 +1,78 @@
+# ========================================================================
+# Synopsys ICC2 Master Floorplan Initialization Script
+# ========================================================================
+
+# Environment & Project Variable Setup
+source -echo -verbose ../../common/ORCA_TOP.design_config.tcl
+
+
+# Setup internal tracking variables
+set top_design $top_design
+set boundary_dims {{0 0} {800 580}}
+
+# Extract and Package NDM Reference Libraries from design_config
+set icc2_ref_libs ""
+foreach dir $ndm_types {
+    #lappend icc2_ref_libs [glob -nocomplain $dir/*.ndm]
+    foreach ndm [glob -nocomplain $dir/*.ndm] {
+	if { [file size $ndm] > 500000 } {
+	    lappend icc2_ref_libs $ndm
+	} else {
+	    puts "Warning: Skipping small/corrupt ndm: $ndm ([file size $ndm] bytes)"
+	}
+    }
+}
+# Find the Synopsys Tech File from the library structure
+#set tech_file "$lib_dir/tech/milkyway/saed32nm_1p9m.tf"
+set tech_file "../../common/hacked_lefs/tech.lef"
+
+# Create Clean ICC2 Library Container and Read Netlist
+#if {[file exists ${top_design}_lib]} {
+   # file delete -force ${top_design}_lib
+#}
+
+#create_lib ${top_design}_lib -ref_libs $icc2_ref_libs 
+
+set script_dir [file dirname [file normalize [info script]]]
+set lib_path [file join $script_dir ORCA_TOP_lib]
+
+if { [file exists $lib_path] } {
+    file delete -force $lib_path
+    puts "INFO: Removed existing library: $lib_path"
+}
+
+create_lib $lib_path -ref_libs $icc2_ref_libs
+
+# Read the gate-level Verilog netlist generated during synthesis
+read_verilog ../../syn/outputs/${top_design}.dct.dft2.vg
+current_design $top_design
+link_block
+
+# Initialize Core Boundary and Row Grid
+initialize_floorplan -boundary $boundary_dims -core_offset {10 10 10 10}
+#initialize_floorplan -core_utilization 0.7 -core_offset {10 10 10 10}
+
+# Load Multi-Corner Timing Constraints (SDC)
+set tlu_dir "/pkgs/synopsys/2020/32_28nm/SAED32_EDK/tech/star_rcxt"
+set flow 1
+source -echo -verbose  ../../constraints/${top_design}.sdc
+
+source -echo -verbose ../../common/ORCA_TOP.design_options.tcl
+
+# Insert Pad Cells and Legalize IOs
+# Executes pad assignment script 
+if { $add_ios } {
+    source -echo -verbose ../scripts/floorplan-ios-icc2.tcl
+}
+
+# Apply Physical Macro Placements
+# Sourcing macro placement mapping script
+if { $innovus_enable_manual_macro_placement == 1 } {
+    source -echo -verbose ../../common/ORCA_TOP.macro_placement_icc2.tcl
+}
+
+
+# Sanity Check Database Consistency
+check_design -checks pre_placement_stage
+
+echo "ICC2 Design Workspace Initialized and Ready for placement optimization."

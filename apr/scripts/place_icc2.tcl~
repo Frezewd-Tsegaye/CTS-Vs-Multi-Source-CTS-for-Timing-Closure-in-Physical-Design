@@ -1,0 +1,53 @@
+##############################################################
+# ORCA_TOP ICC2 — Placement
+##############################################################
+
+source -echo -verbose ../../common/ORCA_TOP.design_config.tcl
+
+# Open library — comment out if still in same session
+# open_lib ORCA_TOP_lib
+# open_block ORCA_TOP_lib:ORCA_TOP/after_power
+
+# Pre-placement settings
+# Set routing layers — M2 to M9 for SAED32 1P9M
+set_ignored_layers -min_routing_layer M2 -max_routing_layer M9
+
+# Set placement effort
+set_app_options -name place.coarse.auto_density_control \
+    -value true
+
+# Disable MV
+#set_app_options -name mv.check_mv_design -value false
+
+# Run placement + optimization
+# place_opt does:
+#   1. Global placement
+#   2. Legalization (snaps cells to rows)
+#   3. Timing-driven optimization
+#   4. Pre-CTS useful skew
+puts "INFO: Running place_opt..."
+place_opt
+
+# Check placement 
+puts "INFO: Checking placement..."
+check_placement -verbose
+
+# Reports
+report_timing \
+    -scenarios [all_scenarios] \
+    -max_paths 10 \
+    > ../outputs/ORCA_TOP.place.timing.rpt
+
+report_qor -summary \
+    > ../outputs/ORCA_TOP.place.qor.rpt
+
+# Print summary to log
+report_timing -scenarios [all_scenarios] -max_paths 5
+report_qor -summary
+
+# Save
+save_block -label after_place
+save_lib ORCA_TOP_lib
+
+puts "INFO: Placement complete"
+
