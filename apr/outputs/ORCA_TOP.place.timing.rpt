@@ -1,0 +1,547 @@
+Warning: Scenario func_best is not configured for setup analysis: skipping. (UIC-058)
+Warning: Scenario test_best is not configured for setup analysis: skipping. (UIC-058)
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 10
+        -report_by design
+Design : ORCA_TOP
+Version: V-2023.12
+Date   : Sat May 30 13:19:24 2026
+****************************************
+Information: Timer using 'SI, Timing Window Analysis, CRPR'. (TIM-050)
+
+  Startpoint: I_RISC_CORE/I_INSTRN_LAT_Crnt_Instrn_2_reg_24_ (rising edge-triggered flip-flop clocked by SYS_2x_CLK)
+  Endpoint: I_RISC_CORE/I_PRGRM_CNT_TOP_I_PRGRM_CNT_PCint_reg_1_ (rising edge-triggered flip-flop clocked by SYS_2x_CLK)
+  Mode: func
+  Corner: Cmax
+  Scenario: func_worst
+  Path Group: SYS_2x_CLK
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock SYS_2x_CLK (rise edge)                     0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  I_RISC_CORE/I_INSTRN_LAT_Crnt_Instrn_2_reg_24_/CLK (SDFFARX1_RVT)
+                                                   0.00      0.00 r
+  I_RISC_CORE/I_INSTRN_LAT_Crnt_Instrn_2_reg_24_/Q (SDFFARX1_RVT)
+                                                   0.69      0.69 r
+  I_RISC_CORE/ZBUF_9_inst_6597/Y (NBUFFX2_LVT)     0.10      0.79 r
+  I_RISC_CORE/HFSINV_545_981/Y (INVX4_LVT)         0.05      0.84 f
+  I_RISC_CORE/ctmTdsLR_2_7444/Y (AND2X1_LVT)       0.09      0.93 f
+  I_RISC_CORE/ctmTdsLR_1_7495/Y (NAND4X0_LVT)      0.08      1.01 r
+  I_RISC_CORE/ctmTdsLR_1_7387/Y (MUX21X2_LVT)      0.22      1.23 f
+  I_RISC_CORE/ctmTdsLR_1_4172/Y (NAND2X0_LVT)      0.10      1.34 r
+  I_RISC_CORE/ZINV_4_inst_8002/Y (INVX1_LVT)       0.04      1.38 f
+  I_RISC_CORE/ctmTdsLR_2_7561/Y (NAND2X0_LVT)      0.08      1.46 r
+  I_RISC_CORE/ctmTdsLR_1_7560/Y (NAND3X0_LVT)      0.08      1.54 f
+  I_RISC_CORE/U1363/Y (OA22X1_LVT)                 0.17      1.70 f
+  I_RISC_CORE/U1460/Y (OA221X1_RVT)                0.41      2.11 f
+  I_RISC_CORE/U1461/Y (OA21X2_LVT)                 0.22      2.33 f
+  I_RISC_CORE/U1462/Y (INVX1_LVT)                  0.06      2.39 r
+  I_RISC_CORE/U1464/Y (AND2X4_LVT)                 0.12      2.51 r
+  I_RISC_CORE/U1582/Y (AO22X1_LVT)                 0.11      2.63 r
+  I_RISC_CORE/U1584/Y (OA222X1_LVT)                0.15      2.78 r
+  I_RISC_CORE/I_PRGRM_CNT_TOP_I_PRGRM_CNT_PCint_reg_1_/D (SDFFARX1_LVT)
+                                                   0.00      2.78 r
+  data arrival time                                          2.78
+
+  clock SYS_2x_CLK (rise edge)                     2.40      2.40
+  clock network delay (ideal)                      0.00      2.40
+  clock reconvergence pessimism                    0.00      2.40
+  I_RISC_CORE/I_PRGRM_CNT_TOP_I_PRGRM_CNT_PCint_reg_1_/CLK (SDFFARX1_LVT)
+                                                   0.00      2.40 r
+  clock uncertainty                               -0.10      2.30
+  library setup time                              -0.21      2.09
+  data required time                                         2.09
+  ------------------------------------------------------------------------
+  data required time                                         2.09
+  data arrival time                                         -2.78
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.68
+
+
+
+  Startpoint: I_RISC_CORE/I_DATA_PATH_Oprnd_B_reg_4_ (rising edge-triggered flip-flop clocked by SYS_2x_CLK)
+  Endpoint: I_RISC_CORE/I_ALU_Lachd_Result_reg_0_ (rising edge-triggered flip-flop clocked by SYS_2x_CLK)
+  Mode: func
+  Corner: Cmax
+  Scenario: func_worst
+  Path Group: SYS_2x_CLK
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock SYS_2x_CLK (rise edge)                     0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  I_RISC_CORE/I_DATA_PATH_Oprnd_B_reg_4_/CLK (SDFFX2_LVT)
+                                                   0.00      0.00 r
+  I_RISC_CORE/I_DATA_PATH_Oprnd_B_reg_4_/Q (SDFFX2_LVT)
+                                                   0.45      0.45 r
+  I_RISC_CORE/ctmTdsLR_2_4336/Y (AO21X1_LVT)       0.09      0.54 r
+  I_RISC_CORE/ctmTdsLR_2_7941/Y (OR3X1_LVT)        0.10      0.64 r
+  I_RISC_CORE/ctmTdsLR_1_7940/Y (AO21X1_LVT)       0.09      0.73 r
+  I_RISC_CORE/ctmTdsLR_4_7811/Y (INVX1_LVT)        0.03      0.77 f
+  I_RISC_CORE/ctmTdsLR_3_7810/Y (NAND3X0_LVT)      0.07      0.83 r
+  I_RISC_CORE/ctmTdsLR_2_7809/Y (NAND3X0_LVT)      0.07      0.90 f
+  I_RISC_CORE/ctmTdsLR_1_7808/Y (AND2X1_LVT)       0.12      1.02 f
+  I_RISC_CORE/ctmTdsLR_1_2730/Y (OR3X1_LVT)        0.12      1.14 f
+  I_RISC_CORE/U1011/Y (OR2X1_LVT)                  0.10      1.24 f
+  I_RISC_CORE/U1013/Y (XNOR2X2_LVT)                0.15      1.39 f
+  I_RISC_CORE/ctmTdsLR_1_7414/Y (OA21X1_LVT)       0.14      1.54 f
+  I_RISC_CORE/ctmTdsLR_2_7601/Y (NAND2X0_LVT)      0.13      1.66 r
+  I_RISC_CORE/ctmTdsLR_4_7847/Y (NAND4X0_LVT)      0.08      1.74 f
+  I_RISC_CORE/ctmTdsLR_1_7844/Y (NAND3X0_LVT)      0.14      1.88 r
+  I_RISC_CORE/ctmTdsLR_2_7488/Y (OA21X1_LVT)       0.11      1.99 r
+  I_RISC_CORE/ctmTdsLR_2_7681/Y (AOI22X1_LVT)      0.12      2.11 f
+  I_RISC_CORE/ctmTdsLR_1_7680/Y (OA21X1_LVT)       0.12      2.23 f
+  I_RISC_CORE/ctmTdsLR_1_3081/Y (AO21X1_LVT)       0.13      2.36 f
+  I_RISC_CORE/U756/Y (AND2X1_LVT)                  0.08      2.44 f
+  I_RISC_CORE/I_ALU_Lachd_Result_reg_0_/D (SDFFX1_RVT)
+                                                   0.00      2.44 f
+  data arrival time                                          2.44
+
+  clock SYS_2x_CLK (rise edge)                     2.40      2.40
+  clock network delay (ideal)                      0.00      2.40
+  clock reconvergence pessimism                    0.00      2.40
+  I_RISC_CORE/I_ALU_Lachd_Result_reg_0_/CLK (SDFFX1_RVT)
+                                                   0.00      2.40 r
+  clock uncertainty                               -0.10      2.30
+  library setup time                              -0.51      1.79
+  data required time                                         1.79
+  ------------------------------------------------------------------------
+  data required time                                         1.79
+  data arrival time                                         -2.44
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.66
+
+
+
+  Startpoint: I_RISC_CORE/I_DATA_PATH_Oprnd_B_reg_11_ (rising edge-triggered flip-flop clocked by SYS_2x_CLK)
+  Endpoint: I_RISC_CORE/R_31 (rising edge-triggered flip-flop clocked by SYS_2x_CLK)
+  Mode: func
+  Corner: Cmax
+  Scenario: func_worst
+  Path Group: SYS_2x_CLK
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock SYS_2x_CLK (rise edge)                     0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  I_RISC_CORE/I_DATA_PATH_Oprnd_B_reg_11_/CLK (SDFFX2_LVT)
+                                                   0.00      0.00 r
+  I_RISC_CORE/I_DATA_PATH_Oprnd_B_reg_11_/Q (SDFFX2_LVT)
+                                                   0.41      0.41 f
+  I_RISC_CORE/U461/Y (NBUFFX8_LVT)                 0.12      0.52 f
+  I_RISC_CORE/U707/Y (OR2X1_LVT)                   0.12      0.64 f
+  I_RISC_CORE/U717/Y (NAND2X0_LVT)                 0.09      0.74 r
+  I_RISC_CORE/U718/Y (AOI21X1_LVT)                 0.13      0.87 f
+  I_RISC_CORE/ctmTdsLR_1_7657/Y (OA22X1_LVT)       0.14      1.01 f
+  I_RISC_CORE/U1179/Y (OR2X1_RVT)                  0.24      1.25 f
+  I_RISC_CORE/ctmTdsLR_3_7977/Y (INVX1_LVT)        0.07      1.32 r
+  I_RISC_CORE/ctmTdsLR_1_7975/Y (OA22X2_LVT)       0.13      1.45 r
+  I_RISC_CORE/ctmTdsLR_3_5246/Y (INVX1_LVT)        0.04      1.49 f
+  I_RISC_CORE/ctmTdsLR_4_5247/Y (MUX41X1_LVT)      0.26      1.75 f
+  I_RISC_CORE/ctmTdsLR_2_3034/Y (AND2X1_LVT)       0.13      1.88 f
+  I_RISC_CORE/ctmTdsLR_1_3033/Y (OA21X1_LVT)       0.10      1.98 f
+  I_RISC_CORE/U100/Y (INVX1_LVT)                   0.06      2.04 r
+  I_RISC_CORE/ctmTdsLR_1_3084/Y (AND2X1_LVT)       0.08      2.12 r
+  I_RISC_CORE/ctmTdsLR_1_2993/Y (AO22X1_LVT)       0.11      2.23 r
+  I_RISC_CORE/ctmTdsLR_1_2922/Y (OR2X2_LVT)        0.11      2.34 r
+  I_RISC_CORE/U1198/Y (INVX4_LVT)                  0.02      2.36 f
+  I_RISC_CORE/ctmTdsLR_2_7974/Y (AND2X1_LVT)       0.10      2.46 f
+  I_RISC_CORE/ctmTdsLR_1_7973/Y (AND3X1_LVT)       0.15      2.61 f
+  I_RISC_CORE/R_31/D (SDFFARX1_LVT)                0.00      2.61 f
+  data arrival time                                          2.61
+
+  clock SYS_2x_CLK (rise edge)                     2.40      2.40
+  clock network delay (ideal)                      0.00      2.40
+  clock reconvergence pessimism                    0.00      2.40
+  I_RISC_CORE/R_31/CLK (SDFFARX1_LVT)              0.00      2.40 r
+  clock uncertainty                               -0.10      2.30
+  library setup time                              -0.32      1.98
+  data required time                                         1.98
+  ------------------------------------------------------------------------
+  data required time                                         1.98
+  data arrival time                                         -2.61
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.63
+
+
+
+  Startpoint: I_RISC_CORE/I_INSTRN_LAT_Crnt_Instrn_2_reg_24_ (rising edge-triggered flip-flop clocked by SYS_2x_CLK)
+  Endpoint: I_RISC_CORE/I_PRGRM_CNT_TOP_I_PRGRM_CNT_PCint_reg_3_ (rising edge-triggered flip-flop clocked by SYS_2x_CLK)
+  Mode: func
+  Corner: Cmax
+  Scenario: func_worst
+  Path Group: SYS_2x_CLK
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock SYS_2x_CLK (rise edge)                     0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  I_RISC_CORE/I_INSTRN_LAT_Crnt_Instrn_2_reg_24_/CLK (SDFFARX1_RVT)
+                                                   0.00      0.00 r
+  I_RISC_CORE/I_INSTRN_LAT_Crnt_Instrn_2_reg_24_/Q (SDFFARX1_RVT)
+                                                   0.69      0.69 r
+  I_RISC_CORE/ZBUF_9_inst_6597/Y (NBUFFX2_LVT)     0.10      0.79 r
+  I_RISC_CORE/HFSINV_545_981/Y (INVX4_LVT)         0.05      0.84 f
+  I_RISC_CORE/ctmTdsLR_2_7444/Y (AND2X1_LVT)       0.09      0.93 f
+  I_RISC_CORE/ctmTdsLR_1_7495/Y (NAND4X0_LVT)      0.08      1.01 r
+  I_RISC_CORE/ctmTdsLR_1_7387/Y (MUX21X2_LVT)      0.22      1.23 f
+  I_RISC_CORE/ctmTdsLR_1_4172/Y (NAND2X0_LVT)      0.10      1.34 r
+  I_RISC_CORE/ZINV_4_inst_8002/Y (INVX1_LVT)       0.04      1.38 f
+  I_RISC_CORE/ctmTdsLR_2_7561/Y (NAND2X0_LVT)      0.08      1.46 r
+  I_RISC_CORE/ctmTdsLR_1_7560/Y (NAND3X0_LVT)      0.08      1.54 f
+  I_RISC_CORE/U1363/Y (OA22X1_LVT)                 0.17      1.70 f
+  I_RISC_CORE/U1460/Y (OA221X1_RVT)                0.41      2.11 f
+  I_RISC_CORE/U1461/Y (OA21X2_LVT)                 0.22      2.33 f
+  I_RISC_CORE/U1462/Y (INVX1_LVT)                  0.06      2.39 r
+  I_RISC_CORE/U1464/Y (AND2X4_LVT)                 0.12      2.51 r
+  I_RISC_CORE/U1473/Y (AOI22X1_LVT)                0.12      2.63 f
+  I_RISC_CORE/ctmTdsLR_1_2756/Y (NAND2X0_LVT)      0.06      2.70 r
+  I_RISC_CORE/I_PRGRM_CNT_TOP_I_PRGRM_CNT_PCint_reg_3_/D (SDFFARX1_LVT)
+                                                   0.00      2.70 r
+  data arrival time                                          2.70
+
+  clock SYS_2x_CLK (rise edge)                     2.40      2.40
+  clock network delay (ideal)                      0.00      2.40
+  clock reconvergence pessimism                    0.00      2.40
+  I_RISC_CORE/I_PRGRM_CNT_TOP_I_PRGRM_CNT_PCint_reg_3_/CLK (SDFFARX1_LVT)
+                                                   0.00      2.40 r
+  clock uncertainty                               -0.10      2.30
+  library setup time                              -0.22      2.08
+  data required time                                         2.08
+  ------------------------------------------------------------------------
+  data required time                                         2.08
+  data arrival time                                         -2.70
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.62
+
+
+
+  Startpoint: I_RISC_CORE/I_INSTRN_LAT_Crnt_Instrn_2_reg_24_ (rising edge-triggered flip-flop clocked by SYS_2x_CLK)
+  Endpoint: I_RISC_CORE/I_PRGRM_CNT_TOP_I_PRGRM_CNT_PCint_reg_5_ (rising edge-triggered flip-flop clocked by SYS_2x_CLK)
+  Mode: func
+  Corner: Cmax
+  Scenario: func_worst
+  Path Group: SYS_2x_CLK
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock SYS_2x_CLK (rise edge)                     0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  I_RISC_CORE/I_INSTRN_LAT_Crnt_Instrn_2_reg_24_/CLK (SDFFARX1_RVT)
+                                                   0.00      0.00 r
+  I_RISC_CORE/I_INSTRN_LAT_Crnt_Instrn_2_reg_24_/Q (SDFFARX1_RVT)
+                                                   0.69      0.69 r
+  I_RISC_CORE/ZBUF_9_inst_6597/Y (NBUFFX2_LVT)     0.10      0.79 r
+  I_RISC_CORE/HFSINV_545_981/Y (INVX4_LVT)         0.05      0.84 f
+  I_RISC_CORE/ctmTdsLR_2_7444/Y (AND2X1_LVT)       0.09      0.93 f
+  I_RISC_CORE/ctmTdsLR_1_7495/Y (NAND4X0_LVT)      0.08      1.01 r
+  I_RISC_CORE/ctmTdsLR_1_7387/Y (MUX21X2_LVT)      0.22      1.23 f
+  I_RISC_CORE/ctmTdsLR_1_4172/Y (NAND2X0_LVT)      0.10      1.34 r
+  I_RISC_CORE/ZINV_4_inst_8002/Y (INVX1_LVT)       0.04      1.38 f
+  I_RISC_CORE/ctmTdsLR_2_7561/Y (NAND2X0_LVT)      0.08      1.46 r
+  I_RISC_CORE/ctmTdsLR_1_7560/Y (NAND3X0_LVT)      0.08      1.54 f
+  I_RISC_CORE/U1363/Y (OA22X1_LVT)                 0.17      1.70 f
+  I_RISC_CORE/U1460/Y (OA221X1_RVT)                0.41      2.11 f
+  I_RISC_CORE/U1461/Y (OA21X2_LVT)                 0.22      2.33 f
+  I_RISC_CORE/U1462/Y (INVX1_LVT)                  0.06      2.39 r
+  I_RISC_CORE/U1464/Y (AND2X4_LVT)                 0.12      2.51 r
+  I_RISC_CORE/ctmTdsLR_1_3417/Y (AO22X1_LVT)       0.11      2.62 r
+  I_RISC_CORE/ctmTdsLR_1_7376/Y (AO21X1_LVT)       0.07      2.70 r
+  I_RISC_CORE/I_PRGRM_CNT_TOP_I_PRGRM_CNT_PCint_reg_5_/D (SDFFARX1_LVT)
+                                                   0.00      2.70 r
+  data arrival time                                          2.70
+
+  clock SYS_2x_CLK (rise edge)                     2.40      2.40
+  clock network delay (ideal)                      0.00      2.40
+  clock reconvergence pessimism                    0.00      2.40
+  I_RISC_CORE/I_PRGRM_CNT_TOP_I_PRGRM_CNT_PCint_reg_5_/CLK (SDFFARX1_LVT)
+                                                   0.00      2.40 r
+  clock uncertainty                               -0.10      2.30
+  library setup time                              -0.20      2.10
+  data required time                                         2.10
+  ------------------------------------------------------------------------
+  data required time                                         2.10
+  data arrival time                                         -2.70
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.60
+
+
+
+  Startpoint: I_RISC_CORE/I_INSTRN_LAT_Crnt_Instrn_2_reg_24_ (rising edge-triggered flip-flop clocked by SYS_2x_CLK)
+  Endpoint: I_RISC_CORE/I_PRGRM_CNT_TOP_I_PRGRM_CNT_PCint_reg_2_ (rising edge-triggered flip-flop clocked by SYS_2x_CLK)
+  Mode: func
+  Corner: Cmax
+  Scenario: func_worst
+  Path Group: SYS_2x_CLK
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock SYS_2x_CLK (rise edge)                     0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  I_RISC_CORE/I_INSTRN_LAT_Crnt_Instrn_2_reg_24_/CLK (SDFFARX1_RVT)
+                                                   0.00      0.00 r
+  I_RISC_CORE/I_INSTRN_LAT_Crnt_Instrn_2_reg_24_/Q (SDFFARX1_RVT)
+                                                   0.69      0.69 r
+  I_RISC_CORE/ZBUF_9_inst_6597/Y (NBUFFX2_LVT)     0.10      0.79 r
+  I_RISC_CORE/HFSINV_545_981/Y (INVX4_LVT)         0.05      0.84 f
+  I_RISC_CORE/ctmTdsLR_2_7444/Y (AND2X1_LVT)       0.09      0.93 f
+  I_RISC_CORE/ctmTdsLR_1_7495/Y (NAND4X0_LVT)      0.08      1.01 r
+  I_RISC_CORE/ctmTdsLR_1_7387/Y (MUX21X2_LVT)      0.22      1.23 f
+  I_RISC_CORE/ctmTdsLR_1_4172/Y (NAND2X0_LVT)      0.10      1.34 r
+  I_RISC_CORE/ZINV_4_inst_8002/Y (INVX1_LVT)       0.04      1.38 f
+  I_RISC_CORE/ctmTdsLR_2_7561/Y (NAND2X0_LVT)      0.08      1.46 r
+  I_RISC_CORE/ctmTdsLR_1_7560/Y (NAND3X0_LVT)      0.08      1.54 f
+  I_RISC_CORE/U1363/Y (OA22X1_LVT)                 0.17      1.70 f
+  I_RISC_CORE/U1460/Y (OA221X1_RVT)                0.41      2.11 f
+  I_RISC_CORE/U1461/Y (OA21X2_LVT)                 0.22      2.33 f
+  I_RISC_CORE/U1462/Y (INVX1_LVT)                  0.06      2.39 r
+  I_RISC_CORE/U1464/Y (AND2X4_LVT)                 0.12      2.51 r
+  I_RISC_CORE/ctmTdsLR_1_3174/Y (AO22X1_LVT)       0.10      2.62 r
+  I_RISC_CORE/ctmTdsLR_1_3190/Y (AO21X1_LVT)       0.08      2.69 r
+  I_RISC_CORE/I_PRGRM_CNT_TOP_I_PRGRM_CNT_PCint_reg_2_/D (SDFFARX1_LVT)
+                                                   0.00      2.69 r
+  data arrival time                                          2.69
+
+  clock SYS_2x_CLK (rise edge)                     2.40      2.40
+  clock network delay (ideal)                      0.00      2.40
+  clock reconvergence pessimism                    0.00      2.40
+  I_RISC_CORE/I_PRGRM_CNT_TOP_I_PRGRM_CNT_PCint_reg_2_/CLK (SDFFARX1_LVT)
+                                                   0.00      2.40 r
+  clock uncertainty                               -0.10      2.30
+  library setup time                              -0.20      2.10
+  data required time                                         2.10
+  ------------------------------------------------------------------------
+  data required time                                         2.10
+  data arrival time                                         -2.69
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.60
+
+
+
+  Startpoint: I_RISC_CORE/I_INSTRN_LAT_Crnt_Instrn_2_reg_24_ (rising edge-triggered flip-flop clocked by SYS_2x_CLK)
+  Endpoint: I_RISC_CORE/I_PRGRM_CNT_TOP_I_PRGRM_CNT_PCint_reg_6_ (rising edge-triggered flip-flop clocked by SYS_2x_CLK)
+  Mode: func
+  Corner: Cmax
+  Scenario: func_worst
+  Path Group: SYS_2x_CLK
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock SYS_2x_CLK (rise edge)                     0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  I_RISC_CORE/I_INSTRN_LAT_Crnt_Instrn_2_reg_24_/CLK (SDFFARX1_RVT)
+                                                   0.00      0.00 r
+  I_RISC_CORE/I_INSTRN_LAT_Crnt_Instrn_2_reg_24_/Q (SDFFARX1_RVT)
+                                                   0.69      0.69 r
+  I_RISC_CORE/ZBUF_9_inst_6597/Y (NBUFFX2_LVT)     0.10      0.79 r
+  I_RISC_CORE/HFSINV_545_981/Y (INVX4_LVT)         0.05      0.84 f
+  I_RISC_CORE/ctmTdsLR_2_7444/Y (AND2X1_LVT)       0.09      0.93 f
+  I_RISC_CORE/ctmTdsLR_1_7495/Y (NAND4X0_LVT)      0.08      1.01 r
+  I_RISC_CORE/ctmTdsLR_1_7387/Y (MUX21X2_LVT)      0.22      1.23 f
+  I_RISC_CORE/ctmTdsLR_1_4172/Y (NAND2X0_LVT)      0.10      1.34 r
+  I_RISC_CORE/ZINV_4_inst_8002/Y (INVX1_LVT)       0.04      1.38 f
+  I_RISC_CORE/ctmTdsLR_2_7561/Y (NAND2X0_LVT)      0.08      1.46 r
+  I_RISC_CORE/ctmTdsLR_1_7560/Y (NAND3X0_LVT)      0.08      1.54 f
+  I_RISC_CORE/U1363/Y (OA22X1_LVT)                 0.17      1.70 f
+  I_RISC_CORE/U1460/Y (OA221X1_RVT)                0.41      2.11 f
+  I_RISC_CORE/U1461/Y (OA21X2_LVT)                 0.22      2.33 f
+  I_RISC_CORE/U1462/Y (INVX1_LVT)                  0.06      2.39 r
+  I_RISC_CORE/U1464/Y (AND2X4_LVT)                 0.12      2.51 r
+  I_RISC_CORE/U1578/Y (AO22X1_LVT)                 0.10      2.61 r
+  I_RISC_CORE/ctmTdsLR_1_7607/Y (AO21X1_LVT)       0.07      2.68 r
+  I_RISC_CORE/I_PRGRM_CNT_TOP_I_PRGRM_CNT_PCint_reg_6_/D (SDFFARX1_LVT)
+                                                   0.00      2.68 r
+  data arrival time                                          2.68
+
+  clock SYS_2x_CLK (rise edge)                     2.40      2.40
+  clock network delay (ideal)                      0.00      2.40
+  clock reconvergence pessimism                    0.00      2.40
+  I_RISC_CORE/I_PRGRM_CNT_TOP_I_PRGRM_CNT_PCint_reg_6_/CLK (SDFFARX1_LVT)
+                                                   0.00      2.40 r
+  clock uncertainty                               -0.10      2.30
+  library setup time                              -0.20      2.10
+  data required time                                         2.10
+  ------------------------------------------------------------------------
+  data required time                                         2.10
+  data arrival time                                         -2.68
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.59
+
+
+
+  Startpoint: I_RISC_CORE/I_INSTRN_LAT_Crnt_Instrn_2_reg_24_ (rising edge-triggered flip-flop clocked by SYS_2x_CLK)
+  Endpoint: I_RISC_CORE/I_PRGRM_CNT_TOP_I_PRGRM_CNT_PCint_reg_7_ (rising edge-triggered flip-flop clocked by SYS_2x_CLK)
+  Mode: func
+  Corner: Cmax
+  Scenario: func_worst
+  Path Group: SYS_2x_CLK
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock SYS_2x_CLK (rise edge)                     0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  I_RISC_CORE/I_INSTRN_LAT_Crnt_Instrn_2_reg_24_/CLK (SDFFARX1_RVT)
+                                                   0.00      0.00 r
+  I_RISC_CORE/I_INSTRN_LAT_Crnt_Instrn_2_reg_24_/Q (SDFFARX1_RVT)
+                                                   0.69      0.69 r
+  I_RISC_CORE/ZBUF_9_inst_6597/Y (NBUFFX2_LVT)     0.10      0.79 r
+  I_RISC_CORE/HFSINV_545_981/Y (INVX4_LVT)         0.05      0.84 f
+  I_RISC_CORE/ctmTdsLR_2_7444/Y (AND2X1_LVT)       0.09      0.93 f
+  I_RISC_CORE/ctmTdsLR_1_7495/Y (NAND4X0_LVT)      0.08      1.01 r
+  I_RISC_CORE/ctmTdsLR_1_7387/Y (MUX21X2_LVT)      0.22      1.23 f
+  I_RISC_CORE/ctmTdsLR_1_4172/Y (NAND2X0_LVT)      0.10      1.34 r
+  I_RISC_CORE/ZINV_4_inst_8002/Y (INVX1_LVT)       0.04      1.38 f
+  I_RISC_CORE/ctmTdsLR_2_7561/Y (NAND2X0_LVT)      0.08      1.46 r
+  I_RISC_CORE/ctmTdsLR_1_7560/Y (NAND3X0_LVT)      0.08      1.54 f
+  I_RISC_CORE/U1363/Y (OA22X1_LVT)                 0.17      1.70 f
+  I_RISC_CORE/U1460/Y (OA221X1_RVT)                0.41      2.11 f
+  I_RISC_CORE/U1461/Y (OA21X2_LVT)                 0.22      2.33 f
+  I_RISC_CORE/U1462/Y (INVX1_LVT)                  0.06      2.39 r
+  I_RISC_CORE/U1464/Y (AND2X4_LVT)                 0.12      2.51 r
+  I_RISC_CORE/ctmTdsLR_1_3144/Y (AO22X1_LVT)       0.10      2.61 r
+  I_RISC_CORE/U1517/Y (AO21X1_LVT)                 0.07      2.68 r
+  I_RISC_CORE/I_PRGRM_CNT_TOP_I_PRGRM_CNT_PCint_reg_7_/D (SDFFARX1_LVT)
+                                                   0.00      2.68 r
+  data arrival time                                          2.68
+
+  clock SYS_2x_CLK (rise edge)                     2.40      2.40
+  clock network delay (ideal)                      0.00      2.40
+  clock reconvergence pessimism                    0.00      2.40
+  I_RISC_CORE/I_PRGRM_CNT_TOP_I_PRGRM_CNT_PCint_reg_7_/CLK (SDFFARX1_LVT)
+                                                   0.00      2.40 r
+  clock uncertainty                               -0.10      2.30
+  library setup time                              -0.20      2.10
+  data required time                                         2.10
+  ------------------------------------------------------------------------
+  data required time                                         2.10
+  data arrival time                                         -2.68
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.59
+
+
+
+  Startpoint: I_RISC_CORE/I_INSTRN_LAT_Crnt_Instrn_2_reg_24_ (rising edge-triggered flip-flop clocked by SYS_2x_CLK)
+  Endpoint: I_RISC_CORE/I_PRGRM_CNT_TOP_I_PRGRM_CNT_PCint_reg_4_ (rising edge-triggered flip-flop clocked by SYS_2x_CLK)
+  Mode: func
+  Corner: Cmax
+  Scenario: func_worst
+  Path Group: SYS_2x_CLK
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock SYS_2x_CLK (rise edge)                     0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  I_RISC_CORE/I_INSTRN_LAT_Crnt_Instrn_2_reg_24_/CLK (SDFFARX1_RVT)
+                                                   0.00      0.00 r
+  I_RISC_CORE/I_INSTRN_LAT_Crnt_Instrn_2_reg_24_/Q (SDFFARX1_RVT)
+                                                   0.69      0.69 r
+  I_RISC_CORE/ZBUF_9_inst_6597/Y (NBUFFX2_LVT)     0.10      0.79 r
+  I_RISC_CORE/HFSINV_545_981/Y (INVX4_LVT)         0.05      0.84 f
+  I_RISC_CORE/ctmTdsLR_2_7444/Y (AND2X1_LVT)       0.09      0.93 f
+  I_RISC_CORE/ctmTdsLR_1_7495/Y (NAND4X0_LVT)      0.08      1.01 r
+  I_RISC_CORE/ctmTdsLR_1_7387/Y (MUX21X2_LVT)      0.22      1.23 f
+  I_RISC_CORE/ctmTdsLR_1_4172/Y (NAND2X0_LVT)      0.10      1.34 r
+  I_RISC_CORE/ZINV_4_inst_8002/Y (INVX1_LVT)       0.04      1.38 f
+  I_RISC_CORE/ctmTdsLR_2_7561/Y (NAND2X0_LVT)      0.08      1.46 r
+  I_RISC_CORE/ctmTdsLR_1_7560/Y (NAND3X0_LVT)      0.08      1.54 f
+  I_RISC_CORE/U1363/Y (OA22X1_LVT)                 0.17      1.70 f
+  I_RISC_CORE/U1460/Y (OA221X1_RVT)                0.41      2.11 f
+  I_RISC_CORE/U1461/Y (OA21X2_LVT)                 0.22      2.33 f
+  I_RISC_CORE/U1462/Y (INVX1_LVT)                  0.06      2.39 r
+  I_RISC_CORE/U1464/Y (AND2X4_LVT)                 0.12      2.51 r
+  I_RISC_CORE/ctmTdsLR_1_2672/Y (AO22X1_LVT)       0.10      2.61 r
+  I_RISC_CORE/ctmTdsLR_1_2849/Y (AO21X1_LVT)       0.07      2.68 r
+  I_RISC_CORE/I_PRGRM_CNT_TOP_I_PRGRM_CNT_PCint_reg_4_/D (SDFFARX1_LVT)
+                                                   0.00      2.68 r
+  data arrival time                                          2.68
+
+  clock SYS_2x_CLK (rise edge)                     2.40      2.40
+  clock network delay (ideal)                      0.00      2.40
+  clock reconvergence pessimism                    0.00      2.40
+  I_RISC_CORE/I_PRGRM_CNT_TOP_I_PRGRM_CNT_PCint_reg_4_/CLK (SDFFARX1_LVT)
+                                                   0.00      2.40 r
+  clock uncertainty                               -0.10      2.30
+  library setup time                              -0.20      2.10
+  data required time                                         2.10
+  ------------------------------------------------------------------------
+  data required time                                         2.10
+  data arrival time                                         -2.68
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.58
+
+
+
+  Startpoint: I_RISC_CORE/I_INSTRN_LAT_Crnt_Instrn_2_reg_24_ (rising edge-triggered flip-flop clocked by SYS_2x_CLK)
+  Endpoint: I_RISC_CORE/I_PRGRM_CNT_TOP_I_PRGRM_CNT_PCint_reg_0_ (rising edge-triggered flip-flop clocked by SYS_2x_CLK)
+  Mode: func
+  Corner: Cmax
+  Scenario: func_worst
+  Path Group: SYS_2x_CLK
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock SYS_2x_CLK (rise edge)                     0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  I_RISC_CORE/I_INSTRN_LAT_Crnt_Instrn_2_reg_24_/CLK (SDFFARX1_RVT)
+                                                   0.00      0.00 r
+  I_RISC_CORE/I_INSTRN_LAT_Crnt_Instrn_2_reg_24_/Q (SDFFARX1_RVT)
+                                                   0.69      0.69 r
+  I_RISC_CORE/ZBUF_9_inst_6597/Y (NBUFFX2_LVT)     0.10      0.79 r
+  I_RISC_CORE/HFSINV_545_981/Y (INVX4_LVT)         0.05      0.84 f
+  I_RISC_CORE/ctmTdsLR_2_7444/Y (AND2X1_LVT)       0.09      0.93 f
+  I_RISC_CORE/ctmTdsLR_1_7495/Y (NAND4X0_LVT)      0.08      1.01 r
+  I_RISC_CORE/ctmTdsLR_1_7387/Y (MUX21X2_LVT)      0.22      1.23 f
+  I_RISC_CORE/ctmTdsLR_1_4172/Y (NAND2X0_LVT)      0.10      1.34 r
+  I_RISC_CORE/ZINV_4_inst_8002/Y (INVX1_LVT)       0.04      1.38 f
+  I_RISC_CORE/ctmTdsLR_2_7561/Y (NAND2X0_LVT)      0.08      1.46 r
+  I_RISC_CORE/ctmTdsLR_1_7560/Y (NAND3X0_LVT)      0.08      1.54 f
+  I_RISC_CORE/U1363/Y (OA22X1_LVT)                 0.17      1.70 f
+  I_RISC_CORE/U1460/Y (OA221X1_RVT)                0.41      2.11 f
+  I_RISC_CORE/U1461/Y (OA21X2_LVT)                 0.22      2.33 f
+  I_RISC_CORE/U1462/Y (INVX1_LVT)                  0.06      2.39 r
+  I_RISC_CORE/U1464/Y (AND2X4_LVT)                 0.12      2.51 r
+  I_RISC_CORE/U1481/Y (AO222X1_LVT)                0.14      2.66 r
+  I_RISC_CORE/I_PRGRM_CNT_TOP_I_PRGRM_CNT_PCint_reg_0_/D (SDFFARX1_LVT)
+                                                   0.00      2.66 r
+  data arrival time                                          2.66
+
+  clock SYS_2x_CLK (rise edge)                     2.40      2.40
+  clock network delay (ideal)                      0.00      2.40
+  clock reconvergence pessimism                    0.00      2.40
+  I_RISC_CORE/I_PRGRM_CNT_TOP_I_PRGRM_CNT_PCint_reg_0_/CLK (SDFFARX1_LVT)
+                                                   0.00      2.40 r
+  clock uncertainty                               -0.10      2.30
+  library setup time                              -0.21      2.09
+  data required time                                         2.09
+  ------------------------------------------------------------------------
+  data required time                                         2.09
+  data arrival time                                         -2.66
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -0.57
+
+
+1
