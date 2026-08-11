@@ -1,0 +1,34 @@
+See Word doc for pictures and full documentation.
+
+https://docs.google.com/document/d/1T6U49aLVq4Gy14LmEv0iymvkCqimZst1/edit?usp=drive_link&ouid=101821471143857909130&rtpof=true&sd=true
+
+This is to address the above issue seen where the Level shifter (LS) cells were being placed incorrectly to the power grid and this is as it was having a LEF issue. This was also causing M1 shorts internally with the cell
+As shown above ? placement was such that VDD pin of cell being connected to VSS and VSS pin of cell being connected to VDD.Below is a workaround to get this resolved
+Hacking the LEFs
+I?ve already hacked the LEFs and placed them in this area which should be accessible.
+/home/adrajesh/common/Desktop/ECE530-2023-SPRING/hacked_lefs/
+also here:
+/u/bcruik2/hacked_lefs/
+
+For the runs to pick these up, you can edit the script accordingly ? scripts/innovus-get-timlibslefs.tcl 
+set lef_path "/home/adrajesh/common/Desktop/ECE530-2023-SPRING/hacked_lefs/saed32nm_hvt_1p9m.lef /home/adrajesh/common/Desktop/ECE530-2023-SPRING/hacked_lefs/saed32nm_lvt_1p9m.lef /home/adrajesh/common/Desktop/ECE530-2023-SPRING/hacked_lefs/saed32nm_rvt_1p9m.lef /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/sram/lef/saed32sram.lef"
+
+What changed?
+For the LS cells, we introduce a new SITE
+Add the ?unitdouble? SITE to the tech lef
+
+You can have copy over the tech lef from this location to your run dir?
+
+cp /home/adrajesh/common/Desktop/ECE530-2023-SPRING/hacked_lefs/tech.lef <work_dir>/cadence_cap_tech/tech.lef
+
+What changed?
+
+We add a ?unitdouble? SITE in the tech lef
+After these changes, after init_design is done, you should see your site rows created something like this?
+
+See Word Doc for pictures.
+
+Now if you proceed with your remaining steps and do place_design, your LS cells would snap to the new site row which we defined and would draw power correctly and there won?t be any internal shorts in M1 layer. ?
+
+We would ultimately want our rows to be defined like in the below snap.
+https://support.cadence.com/apex/techpubDocViewerPage?path=lefdefref/lefdefref5.8/LEFSyntax.html#98569

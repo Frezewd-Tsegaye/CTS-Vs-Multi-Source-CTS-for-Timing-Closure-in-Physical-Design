@@ -1,0 +1,47 @@
+# ========================================================================
+# ORCA_TOP Macro Placement
+# ========================================================================
+
+echo "INFO: Initializing ICC2 Macro placement..."
+
+#  unplace all hard macros to ensure a clean slate
+#set hard_macros [get_cells -hierarchical -filter "is_hard_macro==true"]
+#if {[sizeof_collection $hard_macros] > 0} {
+    #set_cell_status -status unplaced $hard_macros
+#    remove_fixed_objects $hard_macros
+#}
+
+# Apply Coordinates and Orientations
+
+# RISC Core SRAM
+move_objects [get_cells I_RISC_CORE/I_REG_FILE_REG_FILE_A_RAM] -to {160.0 450.0}
+set_attribute [get_cells I_RISC_CORE/I_REG_FILE_REG_FILE_A_RAM] orientation r90
+
+# PCI Top FIFOs
+move_objects [get_cells I_PCI_TOP/I_PCI_READ_FIFO_PCI_FIFO_RAM_1] -to {10.0 380.0}
+set_attribute [get_cells I_PCI_TOP/I_PCI_READ_FIFO_PCI_FIFO_RAM_1] orientation r0
+
+move_objects [get_cells I_PCI_TOP/I_PCI_WRITE_FIFO_PCI_FIFO_RAM_3] -to {10.0 10.0}
+set_attribute [get_cells I_PCI_TOP/I_PCI_WRITE_FIFO_PCI_FIFO_RAM_3] orientation r0
+
+# Context Memory Blocks
+move_objects [get_cells I_CONTEXT_MEM/I_CONTEXT_RAM_0_1] -to {400.0 560.0}
+set_attribute [get_cells I_CONTEXT_MEM/I_CONTEXT_RAM_0_1] orientation r0
+
+move_objects [get_cells I_CONTEXT_MEM/I_CONTEXT_RAM_0_2] -to {400.0 460.0}
+set_attribute [get_cells I_CONTEXT_MEM/I_CONTEXT_RAM_0_2] orientation r0
+
+# SDRAM Top FIFOs
+move_objects [get_cells I_SDRAM_TOP/I_SDRAM_READ_FIFO_SD_FIFO_RAM_0] -to {860.0 10.0}
+set_attribute [get_cells I_SDRAM_TOP/I_SDRAM_READ_FIFO_SD_FIFO_RAM_0] orientation r0
+
+move_objects [get_cells I_SDRAM_TOP/I_SDRAM_READ_FIFO_SD_FIFO_RAM_1] -to {860.0 125.0}
+set_attribute [get_cells I_SDRAM_TOP/I_SDRAM_READ_FIFO_SD_FIFO_RAM_1] orientation r0
+
+set hard_macros [get_cells -hierarchical -filter "is_hard_macro==true"]
+# Lock all macro locations to prevent legalizer displacement
+if {[sizeof_collection $hard_macros] > 0} {
+    #set_cell_status -status fixed $hard_macros
+    set_fixed_objects $hard_macros
+    echo "INFO: Successfully placed and locked [sizeof_collection $hard_macros] hard macros."
+}
