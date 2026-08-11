@@ -1,0 +1,17 @@
+Warning: The congestion map is out dated. Specify -rerun_global_router option to regenerate one.
+
+****************************************
+Report : congestion
+Design : ORCA_TOP
+Version: V-2023.12
+Date   : Sat May 30 13:04:30 2026
+****************************************
+
+Layer     |    overflow     |              # GRCs has
+Name      |  total  |  max  | overflow (%)      | max overflow
+---------------------------------------------------------------
+Both Dirs |     129 |     4 |     117  ( 0.03%) |       1
+H routing |     101 |     2 |      97  ( 0.06%) |       4
+V routing |      28 |     4 |      20  ( 0.01%) |       1
+
+1
