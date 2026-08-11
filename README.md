@@ -25,7 +25,7 @@ CTS-Vs-Multi-Source-CTS-for-Timing-Closure-in-Physical-Design/
 ├── apr/                # pnr scripts and reports
 ├── common/             # common files for synthesis and pnr
 ├── constraints/        # sdc files
-├── syn                 # synthesis outputs 
+├── syn/                # synthesis outputs 
 └── README.md
 
 ````
