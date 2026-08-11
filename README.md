@@ -22,9 +22,10 @@ Floorplanning → Placement → Power Planning → CTS (traditional / multi-sour
 ```` 
 
 CTS-Vs-Multi-Source-CTS-for-Timing-Closure-in-Physical-Design/
-├── scripts/     # TCL scripts for each PD stage
-├── reports/     # QoR, timing, power, and utilization reports
-├── docs/        # Notes, diagrams, methodology write-ups
+├── apr/                # pnr scripts and reports
+├── common/             # common files for synthesis and pnr
+├── constraints/        # sdc files
+├── syn                 # synthesis outputs 
 └── README.md
 
 ````
